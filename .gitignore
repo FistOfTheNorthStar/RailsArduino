@@ -9,7 +9,7 @@
 # log files
 *.log
 
-.keep
+*.keep
 
 # vim
 *.swp
