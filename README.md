@@ -28,6 +28,15 @@ You can fix the graphs how ever you like and fix and fix and fix.
 
 Hopefully this can get you started in using Rails with Arduino. You can edit as you please.
 
+## Raspbian
+
+Be prepared to do a bit of extra configuring.
+There are major differences that you need to take into account if you are goint to use Raspbian on the RaspberryPi. First remember that installing all the necessary dependencies you might need to make sure that the user you are running as will have sufficient privileges.
+Check MySQL sock and change it in the database.yml, run `mysqladmin variables | grep 'socket'` and add that.
+Remember to check where Arduino is connected and add it to the config.yml, for me it was `/dev/ttyAMC0`
+I would consider installing a lighter OS, but you might get into other trouble.
+Then you need to uncomment bootsnap from the Gemfile and config/boot.rb, it does not compile correctly.
+
 ### ToDo
 
 - Run this on a Raspberry Pi with a touch screen
