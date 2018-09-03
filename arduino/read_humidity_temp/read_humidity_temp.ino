@@ -18,5 +18,6 @@ void loop()
 
   String passString = String(temp) + "," + String(humd);
   Serial.println(passString);
-  delay(10000);
+  delay(600000);
+  //delay(10000);
 }
