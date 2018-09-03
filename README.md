@@ -2,7 +2,9 @@
 
 # Easy Arduino Rails Project
 
-This project includes using an Arduino Mega with HTU21D to read temperature in Celcius and relative humidity. This is run in the background, and then you watch the results on a plot. This is just a small project and it is easy to customize to your needs and do more advanced playing around with the plotting. 
+The project is about connecting Arduino to RaspberryPi (or any other computer) via serial.
+
+This project includes using an Arduino Mega with HTU21D to read temperature in Celcius and relative humidity. This is run in the background, and then you watch the results on a plot. This is just a small project and it is easy to customize to your needs and do more advanced playing around with the plotting. The HTU21D could have been connected directly via I2C to the Raspbian, but that was not the point here, other sensors will require some kind of microcontroller in between (Arduino being simple and well supported).
 
 ## Background
 
@@ -35,7 +37,7 @@ There are major differences that you need to take into account if you are goint 
 Check MySQL sock and change it in the database.yml, run `mysqladmin variables | grep 'socket'` and add that.
 Remember to check where Arduino is connected and add it to the config.yml, for me it was `/dev/ttyAMC0`
 I would consider installing a lighter OS, but you might get into other trouble.
-Then you need to uncomment bootsnap from the Gemfile and config/boot.rb, it does not compile correctly.
+Then you need to comment out bootsnap from the Gemfile and config/boot.rb, it does not compile correctly.
 
 ### ToDo
 
