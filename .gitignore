@@ -13,3 +13,7 @@
 
 # vim
 *.swp
+
+# config files
+serial/config/config.yml
+serial/config/database.yml

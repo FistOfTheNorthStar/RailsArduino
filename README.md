@@ -12,6 +12,7 @@ The project for me is to create an easy system where I can see how often humidit
 
 ## Get started with Arduino
 I have included the HTU21D libraries, so you don't need to do anything else than connect the HTU21D to the correct pins. Since I have a Mega it was trivial SDA and SCL to their own ports, plus connect GDN with 5V, then upload the code and you are ready to go.
+You can add a relay circuit (you can find those on ebay) to D10 if you wish. It will trigger for 10min at a time if humidity exceeds EHR 75%.
 
 ## Get started Rails
 Install bundler if you haven't already.
@@ -37,7 +38,7 @@ There are major differences as development was done in OSX that you need to take
 Check MySQL sock and change it in the database.yml, run `mysqladmin variables | grep 'socket'` and add that.
 Remember to check where Arduino is connected and add it to the config.yml, for me it was `/dev/ttyAMC0`
 I would consider installing a lighter OS, but you might get into other trouble.
-Then you need to comment out `bootsnap` from the `Gemfile` and `config/boot.rb`, it does not compile correctly.
+`bootsnap` was commented out from the `Gemfile` and `config/boot.rb`, otherwise it does not compile correctly on the Raspbian.
 
 ### ToDo
 
@@ -48,4 +49,5 @@ Then you need to comment out `bootsnap` from the `Gemfile` and `config/boot.rb`,
 ### Information on molds
 http://www.euro.who.int/__data/assets/pdf_file/0017/43325/E92645.pdf
 
-
+### Mold Index
+Mold index is calculated using the Eq. 1 in the WHO Guidlines For Indoor Air Quality. The formula was fitted with approximate value for pine, and then a little interpolation to make the formula fit the growth of mold on pine at EHR 80% at 28 days at 20 Celcius. The mold index works as a warning indicator for a damp place, and does not necessarily mean that mold will grow, but it should certainly be taken as a warning if a value of 10 is exceeded. The value was multiplied by 10 to fit better on the plot. 
