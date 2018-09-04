@@ -1,4 +1,4 @@
-<img src="http://drive.google.com/uc?export=view&id=19GyXINc0HB03tvHQbLAAQx6s8xJBdPx0" alt="Google Logo">
+<img src="http://drive.google.com/uc?export=view&id=1IVHWSDFdLt1bUA0j2tvHg0UQ_al2ZVG4" alt="Early Results">
 
 # Easy Arduino Rails Project
 
