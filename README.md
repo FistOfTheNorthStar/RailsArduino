@@ -54,4 +54,4 @@ http://www.euro.who.int/__data/assets/pdf_file/0017/43325/E92645.pdf
 Mold index is calculated using the Eq. 1 in the WHO Guidlines For Indoor Air Quality. The formula was fitted with approximate value for pine, and then a little interpolation to make the formula fit the growth of mold on pine at EHR 80% at 28 days at 20 Celcius. The mold index works as a warning indicator for a damp place, and does not necessarily mean that mold will grow, but it should certainly be taken as a warning if a value of 10 is exceeded. The index was multiplied by 10 to align better with rest of the values.
 
 ### Warning Emails
-Warning email is sent if the humidity reaches %75 for a day. You can change this to say an hour.
+Warning email is sent if the humidity reaches 75% for a day. You can change this to say an hour.
