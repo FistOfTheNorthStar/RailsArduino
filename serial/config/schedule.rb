@@ -7,3 +7,7 @@
 every 30.minutes do
   rake 'read_th_save'
 end
+
+every 1.day at '12pm' do
+  rake 'send_warning'
+end

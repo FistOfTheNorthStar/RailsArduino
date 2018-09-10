@@ -8,7 +8,7 @@ This project includes using an Arduino Mega with HTU21D to read temperature in C
 
 ## Background
 
-The project for me is to create an easy system where I can see how often humidity is above EHR 60%, which is the 'magic' limit after which our friend the MOLD will start growing. This is the low limit for some rarer species, but you will definitey get mold if levels exceed ERH 75% But this can be used in any way you see fit, and to understand how easy it is to create standalone systems even with Rails. You not need to worry about space on your Rasbperry Pi as the temperature and humidity are only collected every half an hour.
+The project for me is to create an easy system where I can see how often humidity is above EHR 80%, which is the 'magic' limit after which our friend the MOLD will start growing. However this project can be used in any way you see fit, and to understand how easy it is to create standalone systems even with Rails.
 
 ## Get started with Arduino
 I have included the HTU21D libraries, so you don't need to do anything else than connect the HTU21D to the correct pins. Since I have a Mega it was trivial SDA and SCL to their own ports, plus connect GDN with 5V, then upload the code and you are ready to go.
@@ -42,12 +42,16 @@ I would consider installing a lighter OS, but you might get into other trouble.
 
 ### ToDo
 
-- Run this on a Raspberry Pi with a touch screen
-- Fix a few different Charts in order to see when you are at risk of Mold!
-- Create email alerts if Rel/H goes over EHR 60% for 3 hours and exceeds EHR75% at any time
+- Nothing critical at this point, but lots of little things, writing tests for the email, but it is quite simple at the moment
+- Run this on a Raspberry Pi with a touch screen (bought the wrong screen so I might skip this part)
+- Add more analytics
+- Add CSS to email
 
 ### Information on molds
 http://www.euro.who.int/__data/assets/pdf_file/0017/43325/E92645.pdf
 
 ### Mold Index
-Mold index is calculated using the Eq. 1 in the WHO Guidlines For Indoor Air Quality. The formula was fitted with approximate value for pine, and then a little interpolation to make the formula fit the growth of mold on pine at EHR 80% at 28 days at 20 Celcius. The mold index works as a warning indicator for a damp place, and does not necessarily mean that mold will grow, but it should certainly be taken as a warning if a value of 10 is exceeded. The value was multiplied by 10 to fit better on the plot. 
+Mold index is calculated using the Eq. 1 in the WHO Guidlines For Indoor Air Quality. The formula was fitted with approximate value for pine, and then a little interpolation to make the formula fit the growth of mold on pine at EHR 80% at 28 days at 20 Celcius. The mold index works as a warning indicator for a damp place, and does not necessarily mean that mold will grow, but it should certainly be taken as a warning if a value of 10 is exceeded. The index was multiplied by 10 to align better with rest of the values.
+
+### Warning Emails
+Warning email is sent if the humidity reaches %75 for a day. You can change this to say an hour.
