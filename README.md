@@ -1,5 +1,7 @@
 <img src="http://drive.google.com/uc?export=view&id=1IVHWSDFdLt1bUA0j2tvHg0UQ_al2ZVG4" alt="Early Results">
 
+# Project deprecated, if you wish to fork then fix the issues.
+
 # Easy Arduino Rails Project
 
 The project is about connecting Arduino to RaspberryPi (or any other computer) via serial.
